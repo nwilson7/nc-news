@@ -1,0 +1,26 @@
+.article-list-section {
+  justify-content: center;
+  column-count: 2;
+  column-gap: 40px;
+}
+
+.article-list {
+  border: 10px solid black;
+  margin: auto;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.article-list-items {
+  width: 100px;
+  padding: 50px;
+  list-style-type: none;
+}
+
+.article-img {
+  width: 300px;
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
+}
