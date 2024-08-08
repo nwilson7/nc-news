@@ -1,7 +1,7 @@
 function Signin() {
   return (
     <form>
-      <label>Email: </label>
+      <label>User</label>
       <input type="text" />
       <button type="submit">Log in</button>
     </form>
