@@ -9,10 +9,21 @@ function getArticles() {
     return articles;
   });
 }
+function getArticlesById(article_id) {
+  return api.get(`/articles/${article_id}`).then((article) => {
+    return article;
+  });
+}
 
 function getCategories() {
   return api.get("/topics").then((topics) => {
     return topics;
   });
 }
-export { getArticles, getCategories };
+
+function getComments() {
+  return api.get("/articles/:article_id/comments").then((comments) => {
+    return comments;
+  });
+}
+export { getArticles, getCategories, getArticlesById, getComments };
