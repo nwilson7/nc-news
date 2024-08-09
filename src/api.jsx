@@ -21,8 +21,8 @@ function getCategories() {
   });
 }
 
-function getComments() {
-  return api.get("/articles/:article_id/comments").then((comments) => {
+function getComments(article_id) {
+  return api.get(`/articles/${article_id}/comments`).then((comments) => {
     return comments;
   });
 }
