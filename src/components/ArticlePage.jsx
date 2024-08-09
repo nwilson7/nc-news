@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { getArticlesById } from "../api";
 import { useParams } from "react-router-dom";
 import Nav from "./Nav";
+import CommentList from "./CommentList";
 
 function ArticlePage() {
   const [article, setArticle] = useState();
@@ -10,7 +11,6 @@ function ArticlePage() {
 
   useEffect(() => {
     getArticlesById(articleId).then(({ data }) => {
-      console.log(data);
       setArticle(data.article);
       setIsLoading(false);
     });
@@ -25,6 +25,7 @@ function ArticlePage() {
       <p>Written by: {article.author}</p>
       <img src={article.article_img_url} />
       <p>{article.body}</p>
+      <CommentList />
     </>
   );
 }
