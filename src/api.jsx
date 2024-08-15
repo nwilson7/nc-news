@@ -15,6 +15,13 @@ function getArticlesById(article_id) {
   });
 }
 
+function getSortedArticlesByDate() {
+  return api.get("/articles").then(({ data }) => {
+    const sortedArticles = data.articles.sort((a, b) => new Date(b.created_at));
+    return sortedArticles;
+  });
+}
+
 function getCategories() {
   return api.get("/topics").then((topics) => {
     return topics;
@@ -26,4 +33,22 @@ function getComments(article_id) {
     return comments;
   });
 }
-export { getArticles, getCategories, getArticlesById, getComments };
+
+function postVote(article_id, increment) {
+  return api
+    .patch(`/articles/${article_id}`, {
+      inc_votes: increment,
+    })
+    .then((response) => {
+      return response.data;
+    });
+}
+
+export {
+  getArticles,
+  getCategories,
+  getArticlesById,
+  getComments,
+  getSortedArticlesByDate,
+  postVote,
+};

@@ -3,6 +3,7 @@ import { getArticlesById } from "../api";
 import { useParams } from "react-router-dom";
 import Nav from "./Nav";
 import CommentList from "./CommentList";
+import Votes from "./Votes";
 
 function ArticlePage() {
   const [article, setArticle] = useState();
@@ -25,6 +26,7 @@ function ArticlePage() {
       <p>Written by: {article.author}</p>
       <img src={article.article_img_url} />
       <p>{article.body}</p>
+      <Votes article={article} />
       <CommentList />
     </>
   );

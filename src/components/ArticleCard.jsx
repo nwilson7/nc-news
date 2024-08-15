@@ -6,9 +6,7 @@ import Typography from "@mui/material/Typography";
 import { CardActionArea } from "@mui/material";
 import { Link } from "react-router-dom";
 
-function ArticleCard(prop) {
-  const { article } = prop;
-
+function ArticleCard({ article, large }) {
   return (
     <Link
       to={`/articles/${article.article_id}`}
@@ -16,7 +14,7 @@ function ArticleCard(prop) {
     >
       <Card
         sx={{
-          width: 345,
+          width: large ? "100%" : 345,
         }}
       >
         <CardActionArea
@@ -24,7 +22,7 @@ function ArticleCard(prop) {
         >
           <CardMedia
             component="img"
-            height="140"
+            height={large ? "300" : "140"}
             image={article.article_img_url}
             alt={article.title}
           />
