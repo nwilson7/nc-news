@@ -1,0 +1,19 @@
+.featured-articles {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.featured-article {
+  width: 100%;
+}
+
+.side-articles {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.side-article {
+  flex: 1;
+}

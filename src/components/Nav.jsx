@@ -14,7 +14,7 @@ import MenuItem from "@mui/material/MenuItem";
 function Nav() {
   const [anchorElNav, setAnchorElNav] = useState(null);
   const pages = [
-    { name: "Home", path: "/home" },
+    { name: "Home", path: "/" },
     { name: "Articles", path: "/articles" },
   ];
 
