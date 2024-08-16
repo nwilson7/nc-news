@@ -36,11 +36,19 @@ function getComments(article_id) {
 
 function postVote(article_id, increment) {
   return api
-    .patch(`/articles/${article_id}`, {
+    .patch(`/articless/${article_id}`, {
       inc_votes: increment,
     })
     .then((response) => {
       return response.data;
+    });
+}
+
+function postComment(article_id, commentData) {
+  return api
+    .post(`/articles/${article_id}/comments`, commentData)
+    .then((response) => {
+      return response;
     });
 }
 
@@ -50,5 +58,6 @@ export {
   getArticlesById,
   getComments,
   getSortedArticlesByDate,
-  postVote,
+  postVote as postVote,
+  postComment,
 };

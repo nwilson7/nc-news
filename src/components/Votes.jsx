@@ -15,12 +15,12 @@ function Votes({ article }) {
     });
 
     postVote(articleId, 1)
-      .then((result) => {
-        console.log("done");
-      })
+      .then((result) => {})
       .catch((error) => {
         console.log(error);
-        setVoteCount(voteCount);
+        setVoteCount((currVote) => {
+          return currVote - 1;
+        });
       });
   }
 
